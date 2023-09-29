@@ -1,0 +1,34 @@
+name: Build deployable artifact
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  archive:
+    name: Create ZIP archive
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source code
+        uses: actions/checkout@v4
+
+      - name: Download and install dependencies
+        run: npm install
+
+      - name: Build JavaScript bundles and copy assets to the "dist" directory
+        run: npm run build
+
+      - name: Create a ZIP archive of the "dist" directory for upload
+        run: |
+          rm -f deploy.zip && pushd dist && zip -r ../deploy.zip .; popd
+
+      - name: Create a GitHub release of the artifact for download and deployment
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          gh release create \
+            "$(date --utc --rfc-3339=date)" \
+            --title "$(date --utc --rfc-3339=date)" \
+            --notes "Latest build as of $(date --utc)" \
+            deploy.zip
