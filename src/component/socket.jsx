@@ -1,34 +1,52 @@
 import React, { useEffect, useState } from "react";
 import ClientContext from "../context/client.jsx";
 
-const updateDocumentTitle = (e) => {
-  const title = e?.resource?.title;
+/**
+ * Updates the HTML document title with the current resource title.
+ *
+ * @param resource {object}
+ *   The current resource.
+ */
+const updateDocumentTitle = (resource) => {
+  const title = resource?.title;
   if (title && document) {
     document.title = title;
   }
 };
 
-const startEventLoop = (client, eventHandler) => {
-  (async () => {
-    for await (const event of client.start()) {
-      eventHandler(event);
-    }
-  })();
-  return () => client.stop();
-};
-
+/**
+ * Socket starts and integrates the Applura client with the App component.
+ *
+ * @param App
+ *   App renders the application for the given resource and/or problem.
+ * @param client
+ *   The Applura JS client instance.
+ */
 const Socket = ({ App, client }) => {
+  const { start, stop } = client;
   const [{ resource, problem }, setData] = useState({});
 
+  // Update the application when an event occurs, such as a navigation or server-sent event.
   const handleEvent = (e) => {
-    updateDocumentTitle(e);
+    updateDocumentTitle(e?.resource);
     setData(e);
   };
 
-  useEffect(() => startEventLoop(client, handleEvent), [client]);
+  // Start the application event loop.
+  useEffect(() => {
+    (async () => {
+      for await (const { resource, problem } of start()) {
+        handleEvent({ resource, problem });
+      }
+    })();
+    return stop;
+  }, [client]);
 
+  // Render the application once a resource or problem is encountered, but not before.
   return resource || problem ? (
+    // ClientContext provides the application with access to the Applura client, especially the "follow" function.
     <ClientContext.Provider value={client}>
+      {/* The main application component */}
       <App resource={resource} problem={problem} />
     </ClientContext.Provider>
   ) : null;

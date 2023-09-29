@@ -1,5 +1,11 @@
 const path = require('path');
 
+/**
+ * This file configures webpack to generate a client-side bundle of your application.
+ *
+ * The output webpack generates with this configuration should be imported by your index.html file.
+ */
+
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
