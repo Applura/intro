@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Meta tags can be configured per-resource using a Metadata resource field. Applura will add them server side. -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/mvp.css" />
     <script
       async
       rel="preload"
@@ -11,12 +11,13 @@
       src="https://cdn.applura.com/dist/js/client/v2.js"
     ></script>
     <!-- Use relative paths for assets. Applura will rewrite the "href" to point to the latest release on its CDN. -->
-    <link rel="stylesheet" href="/static/mvp.css" />
     <script rel="preload" type="module" src="/main.js"></script>
+    <link rel="stylesheet" href="/static/mvp.css" />
     <!-- <title> will be rewritten by the server as needed. -->
     <title>Starter App</title>
   </head>
   <body>
-    <div id="app">Loading</div>
+    <!-- A <div> with the ID "app" is required for Applura server-side rendering. -->
+    <div id="app"></div>
   </body>
 </html>
