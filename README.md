@@ -52,5 +52,5 @@ be injected into your `index.html` file's `<div id="app">` element. It **SHOULD*
 encountered to provide a better experience for your end-users.
 
 ## Callouts
-[Open an issue](https://github.com/Applura/intro/issues/new/choose) to tell us what deserves a callout. What do you wish
+[Open an issue](https://github.com/Applura/intro/issues/new) to tell us what deserves a callout. What do you wish
 you knew up front?
