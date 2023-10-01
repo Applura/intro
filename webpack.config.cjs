@@ -28,6 +28,12 @@ module.exports = {
       },
     ],
   },
+  externalsType: "module",
+  externals: {
+    // The "@applura/client" package identifier is defined by the import map in index.html. It is not published on NPM.
+    // See https://github.com/Applura/client#browser-only-import.
+    "@applura/client": "@applura/client",
+  },
   experiments: {
     outputModule: true,
   },
