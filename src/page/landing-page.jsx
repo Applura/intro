@@ -25,7 +25,7 @@ const LandingPage = ({ fields }) => {
     <div id="landing-page">
       <header>
         {/* The main menu. */}
-        <Nav menu={mainMenu.data} />
+        <Nav resource={mainMenu.data} />
         {/* The hero content is sent from the server, pre-processed and filtered against XSS vulnerabilities. */}
         <ProcessedHTML html={hero} />
       </header>

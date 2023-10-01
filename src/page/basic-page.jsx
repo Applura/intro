@@ -15,7 +15,7 @@ const BasicPage = ({ fields }) => {
     <div id="basic-page">
       <header>
         {/* The main resource. */}
-        <Nav menu={mainMenu.data} />
+        <Nav resource={mainMenu.data} />
         <h2>{title}</h2>
       </header>
       <main>

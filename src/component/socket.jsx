@@ -23,7 +23,6 @@ const updateDocumentTitle = (resource) => {
  *   The Applura JS client instance.
  */
 const Socket = ({ App, client }) => {
-  const { start, stop } = client;
   const [{ resource, problem }, setData] = useState({});
 
   // Update the application when an event occurs, such as a navigation or server-sent event.
@@ -35,11 +34,11 @@ const Socket = ({ App, client }) => {
   // Start the application event loop.
   useEffect(() => {
     (async () => {
-      for await (const { resource, problem } of start()) {
+      for await (const { resource, problem } of client.start()) {
         handleEvent({ resource, problem });
       }
     })();
-    return stop;
+    return () => client.stop();
   }, [client]);
 
   // Render the application once a resource or problem is encountered, but not before.
