@@ -16,10 +16,32 @@ webpack as a _lingua franca_, but Applura can be used with your favorite tools. 
 webpack** for your front-end application. The **code in this project also contains comments** intended to introduce
 you to key concepts and considerations.
 
-Source code is bundled into **two critical files**. They are:
+Source code is bundled into **three critical files**. They are:
 
-- `dist/main.js`: The client-side version of your application. Configured via `webpack.config.cjs`.
-- `dist/render.js`: The server-side version of your application. Configured via `webpack.config.server.cjs`.
+- `index.html`: Your application's primary HTML document. Loads your client-side JavaScript and other assets.
+- `main.js`: The client-side version of your application. Configured via `webpack.config.cjs`.
+- `render.js`: The server-side version of your application. Configured via `webpack.config.server.cjs`.
+
+## Deployment
+
+To deploy your own version of this application:
+
+1. Make your modifications.
+2. Create a ZIP archive.
+3. Upload the archive via the management UI.
+4. Deploy a new release with a brief note.
+
+At a minimum, the root of the ZIP archive should contain the [three files](#overview) listed in the overview section.
+These files should not be in a subdirectory within the archive. For asset imports, such as a CSS link in your
+`index.html`, use relative URLs like `<link href="/static/style.css" … />` instead of an absolute URL. There are no
+other requirements.
+
+This project's [GitHub workflow](https://github.com/Applura/intro/blob/main/.github/workflows/build-artifact.yml)
+contains a working ZIP command and you can download an example ZIP archive from the project [Releases](https://github.com/Applura/intro/releases)
+page.
+
+> Note: All other assets in the archive will be deployed to a CDN and delivered via a unique URL for each deployment.
+> You do not need to change file names in order to invalidate cached versions of your assets.
 
 ## Architecture
 
