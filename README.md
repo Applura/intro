@@ -26,8 +26,8 @@ Source code is bundled into **three critical files**. They are:
 
 To deploy your own version of this application:
 
-1. Make your modifications.
-2. Create a ZIP archive.
+1. Make your modifications and run `npm run build`.
+2. Create a ZIP archive of the new or updated `dist` directory.
 3. Upload the archive via the management UI.
 4. Deploy a new release with a brief note.
 
