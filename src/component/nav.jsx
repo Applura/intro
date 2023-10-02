@@ -5,7 +5,11 @@ import Link from "./link.jsx";
  * MenuLink renders a menu item link unless it is the active menu item.
  */
 const MenuLink = ({ title, href, active = false }) => {
-  return active || !href.length ? <span>{title}</span> : <Link {...{ title, href }} />;
+  return active || !href.length ? (
+    <span>{title}</span>
+  ) : (
+    <Link {...{ title, href }} />
+  );
 };
 
 /**

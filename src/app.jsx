@@ -24,7 +24,11 @@ const App = ({ resource, problem }) => {
   // Look up the appropriate component to render this resource.
   const Page = PageTypes[type];
   // Render the resource from its fields.
-  return <Page fields={resource} />;
+  return (
+    (Page && <Page fields={resource} />) || (
+      <p>Unrecognized resource type: {type}</p>
+    )
+  );
 };
 
 export default App;
