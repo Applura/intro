@@ -13,12 +13,12 @@
       }
     </script>
     <!-- Preload the official Applura client module for increased performance. -->
-    <script
-      async
+    <link
       rel="preload"
-      type="module"
+      as="script"
       src="https://cdn.applura.com/dist/js/client/v2.js"
-    ></script>
+      crossorigin
+    />
     <!-- Use relative paths for assets. Applura will rewrite the "href" to point to the latest release on its CDN. -->
     <script rel="preload" type="module" src="/main.js"></script>
     <link rel="stylesheet" href="/static/mvp.css" />
