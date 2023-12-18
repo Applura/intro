@@ -12,21 +12,20 @@
         }
       }
     </script>
-    <!-- Preload the official Applura client module for increased performance. -->
     <link
       rel="preload"
       as="script"
       href="https://cdn.applura.com/dist/js/client/v2.js"
       crossorigin
     />
-    <!-- Use relative paths for assets. Applura will rewrite the "href" to point to the latest release on its CDN. -->
-    <script type="module" src="/main.js"></script>
-    <link rel="stylesheet" href="/static/mvp.css" />
+    <script id="app-js" type="module" src="/main.js"></script>
+    <link rel="stylesheet" href="/static/reset.css" />
+    <link rel="stylesheet" href="/static/style.css" />
     <!-- <title> will be rewritten by the server as needed. -->
-    <title>Starter App</title>
+    <link rel="alternate preload" as="fetch" href="https://26e368b0-9b51-490f-bfe1-a07216c315a7.api.applura.app/" type="application/vnd.api+json" />
+    <title>Welcome</title>
   </head>
   <body>
-    <!-- A <div> with the ID "app" is required for Applura server-side rendering. -->
-    <div id="app"></div>
+    <div id="app" class="page clamp"></div>
   </body>
 </html>

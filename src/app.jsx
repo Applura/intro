@@ -1,6 +1,8 @@
 import React from "react";
 import LandingPage from "./page/landing-page.jsx";
 import BasicPage from "./page/basic-page.jsx";
+import FAQPage from "./page/faq-page.jsx";
+import ConnectPage from "./page/connect-page.jsx";
 
 /**
  * PageTypes maps server resource types to the component that should render them.
@@ -8,6 +10,8 @@ import BasicPage from "./page/basic-page.jsx";
 const PageTypes = {
   landing_page: LandingPage,
   basic_page: BasicPage,
+  faq_page: FAQPage,
+  connect_page: ConnectPage,
 };
 
 /**
@@ -20,14 +24,14 @@ const PageTypes = {
  */
 const App = ({ resource, problem }) => {
   // Extract the type of the current resource.
-  const { type } = resource;
+  const { type, connect: connectLink } = resource;
   // Look up the appropriate component to render this resource.
   const Page = PageTypes[type];
   // Render the resource from its fields.
   return (
-    (Page && <Page fields={resource} />) || (
-      <p>Unrecognized resource type: {type}</p>
-    )
+      <div className={`page-type__${type}`}>
+        {Page && <Page fields={resource} /> || <p>Unrecognized resource type: {type}</p>}
+      </div>
   );
 };
 

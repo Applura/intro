@@ -9,7 +9,8 @@
     "build:watch": "webpack --watch",
     "build:client": "webpack --config webpack.config.cjs",
     "build:server": "webpack --config webpack.config.server.cjs",
-    "build:assets": "rm -rf dist/static dist/index.html && cp -r src/index.html src/static dist/"
+    "build:assets": "rm -rf dist/static dist/index.html && cp -r src/index.html src/static dist/",
+    "package": "npm run build && pushd dist && rm -f ../deploy.zip && zip -r ../deploy.zip .; popd"
   },
   "author": "Applura, Inc",
   "license": "MIT",

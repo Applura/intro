@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, {useDebugValue, useEffect, useState} from "react";
 import ClientContext from "../context/client.jsx";
+import AssetURLContext from "../context/asset-url.jsx";
+import ConnectLinkContext from "../context/connect-link.jsx";
 
 /**
  * Updates the HTML document title with the current resource title.
@@ -21,9 +23,12 @@ const updateDocumentTitle = (resource) => {
  *   App renders the application for the given resource and/or problem.
  * @param client
  *   The Applura JS client instance.
+ * @param assetURL
+ *   The base URL for static assets.
  */
-const Socket = ({ App, client }) => {
+const Socket = ({ App, client, assetURL }) => {
   const [{ resource, problem }, setData] = useState({});
+  const { connect: connectLink } = resource || { connectLink: null };
 
   // Update the application when an event occurs, such as a navigation or server-sent event.
   const handleEvent = (e) => {
@@ -46,7 +51,11 @@ const Socket = ({ App, client }) => {
     // ClientContext provides the application with access to the Applura client, especially the "follow" function.
     <ClientContext.Provider value={client}>
       {/* The main application component */}
-      <App resource={resource} problem={problem} />
+      <AssetURLContext.Provider value={assetURL}>
+        <ConnectLinkContext.Provider value={connectLink}>
+          <App resource={resource} problem={problem} />
+        </ConnectLinkContext.Provider>
+      </AssetURLContext.Provider>
     </ClientContext.Provider>
   ) : null;
 };

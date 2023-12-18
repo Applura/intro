@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Link from "./link.jsx";
 
 /**
@@ -38,15 +38,12 @@ const Items = ({ items }) => (
  *
  * @param resource
  */
-const Nav = ({ resource: { items } }) => (
-  <nav>
-    {/* Render top-level menu items. */}
+const Nav = ({ resource: { items } }) => {
+  const [isOpen, setOpen] = useState(false);
+  return <nav className={`menu-items ${isOpen ? 'menu-items--expanded' : ''}`} >
+    <button className="menu-toggle" onClick={() => setOpen(!isOpen)}>{ isOpen ? 'Close' : 'Menu' }</button>
     <Items items={items} />
-    {/* Render the example project "logo". */}
-    <h1>
-      Starter App<sup>React</sup>
-    </h1>
   </nav>
-);
+}
 
 export default Nav;

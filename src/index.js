@@ -9,13 +9,17 @@ import { bootstrap } from "@applura/client";
 
 // Mount and launch the client-side application.
 document.addEventListener("DOMContentLoaded", async () => {
+  const assetURL = document
+      .querySelector('script#app-js')
+      .getAttribute('src')
+      .slice(0, -1 * `/main.js`.length)
   // Bootstrap the Applura client. This should wait for the "DOMContentLoaded" event since the "bootstrap" function
   // depends on <link> elements in the document <head>. They provide the URL for the current resource.
   const client = bootstrap();
   // Get the application container.
   const container = document.getElementById("app");
   // "Plug" the main application into the Applura client.
-  const Main = <Socket App={App} client={client} />;
+  const Main = <Socket App={App} client={client} assetURL={assetURL} />;
   // Launch the application.
   createRoot(container).render(Main);
 });

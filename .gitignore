@@ -3,3 +3,4 @@ _testdata
 node_modules
 dist
 Caddyfile
+deploy.zip
