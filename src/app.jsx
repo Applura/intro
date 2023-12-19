@@ -19,6 +19,9 @@ const PageTypes = {
  *   The last problem encountered, if any, such as a client or server error.
  */
 const App = ({ resource, problem }) => {
+  if (problem) {
+    return (<div><h1>Error</h1><p>An unexpected problem occurred.</p></div>);
+  }
   // Extract the type of the current resource.
   const { type } = resource;
   // Look up the appropriate component to render this resource.
