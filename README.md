@@ -24,11 +24,17 @@ Source code is bundled into **three critical files**. They are:
 
 ## Deployment
 
-To deploy your own version of this application:
+If you forked this repository, every push to the `main` branch will automatically create a new artifact you can download
+from GitHub and upload to your project immediately.
+
+Or, you can create the same release artifact locally with the following steps:
 
 1. Make your modifications and run `npm run build`.
 2. Create a ZIP archive of the new or updated `dist` directory.
-3. Upload the archive via the management UI.
+   ```shell
+   rm -f deploy.zip && pushd dist && zip -r ../deploy.zip .; popd
+   ```
+3. Upload the ZIP archive via the management UI.
 4. Deploy a new release with a brief note.
 
 At a minimum, the root of the ZIP archive should contain the [three files](#overview) listed in the overview section.
