@@ -1,7 +1,7 @@
 # Introduction
 
-If you are a new Applura user, welcome! **You've found Applura's introductory front-end application.** It's the first
-front-end your project will use. **You can replace it at any time**, and you're not required _or expected_ to use it.
+If you are a new Applura user, welcome! **You've found Applura's introductory front-end application.** It comes
+pre-installed on every new project. **You can replace it at any time**, and you're not required _or expected_ to use it.
 
 **We provide this project as a simple demonstration** of a few key features and best-practices to know when developing a
 front-end application on Applura. If ever you have a question or concern, please don't hesitate to [open a new issue](https://github.com/Applura/intro/issues/new)!
