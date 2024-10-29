@@ -13,20 +13,77 @@
       }
     </script>
     <!-- Preload the official Applura client module for increased performance. -->
-    <link
-      rel="preload"
-      as="script"
-      href="https://cdn.applura.com/dist/js/client/v2.js"
-      crossorigin
-    />
+    <link rel="preload" as="script" href="https://cdn.applura.com/dist/js/client/v2.js" crossorigin/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <!-- Use relative paths for assets. Applura will rewrite the "href" to point to the latest release on its CDN. -->
     <script type="module" src="/main.js"></script>
     <link rel="stylesheet" href="/static/mvp.css" />
+    <link rel="stylesheet" href="./static/intro-page.css" />
     <!-- <title> will be rewritten by the server as needed. -->
     <title>Starter App</title>
   </head>
   <body>
     <!-- A <div> with the ID "app" is required for Applura server-side rendering. -->
-    <div id="app"></div>
+    <div id="app">
+      <header class="header">
+        <div class="header-content container">
+          <div class="navigation">
+            <ul class="menu">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Manage</a></li>
+              <li><a href="#">Learn more </a></li>
+            </ul>
+          </div>
+          <div class="actions">
+            <a href="#" class="btn-primary">Edit Page</a>
+          </div>
+        </div>
+      </header>
+      <div class="main-content">
+        <div class="banner container">
+          <h1 class="title">Hello World!</h1>
+          <div class="description">
+            Now you're up and running with your first web<br>application on Applura.
+          </div>
+        </div>
+        <div class="background-image-section">
+          <div class="container">
+            <div class="text-wrapper">
+              <h2 class="content-title">Dive Deeper</h2>
+              <div class="content-description">This introductory application explains and demonstrates a few of Applura's features and quickly describes how to use them.</div>
+            </div>
+            <div class="cards">
+              <div class="card">
+                <div class="card-icon book"></div>
+                <div class="card-content">
+                  <div class="card-title">Find More Ways to Manage Your Content</div>
+                  <div class="card-description">
+                    Follow the menu links above to learn more about managing content or how to build your JavaScript front-end application.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-icon notice"></div>
+                <div class="card-content">
+                  <div class="card-title">Edit This Page or Switch to Your Favorite JavaScript Library</div>
+                  <div class="card-description">
+                    Edit these pages and tweak this default front end's styling. If you're familiar with a different JavaScript library, such as Vue or Svelte, you can easily swap this introductory front end out with one that is more familiar to you.                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-icon terminal"></div>
+                <div class="card-content">
+                  <div class="card-title">Customize Your Front End</div>
+                  <div class="card-description">
+                    When you've found your bearings, replace this front-end application with one you've built yourself and customize the content model to your specific needs.                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
