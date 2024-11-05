@@ -2,6 +2,7 @@ import React from "react";
 import ProcessedHTML from '../component/processed-html.jsx';
 import Nav from '../component/nav.jsx';
 import Cards from "../component/cards.jsx";
+import Text from "../component/text.jsx";
 
 /**
  * LandingPage renders "landing_page" resources.
@@ -11,7 +12,7 @@ import Cards from "../component/cards.jsx";
  */
 const LandingPage = ({ fields }) => {
   // Extract the required fields from the resource fields.
-  const { title, hero, mainMenu, cards } = fields;
+  const { title, hero, mainMenu, cards, text } = fields;
   console.log(fields);
   return (
     <div id="landing-page">
@@ -32,13 +33,7 @@ const LandingPage = ({ fields }) => {
         </div>
         <div className="background-image-section">
           <div className="container">
-            <div className="text-wrapper">
-              <h2 className="content-title">Dive Deeper</h2>
-              <div className="content-description">This introductory application
-                explains and demonstrates a few of Applura's features and
-                quickly describes how to use them.
-              </div>
-            </div>
+            <Text components={text} />
             <Cards cards={cards} />
           </div>
         </div>
