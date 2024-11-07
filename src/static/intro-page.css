@@ -99,7 +99,7 @@ body {
  * Content.
  */
 .background-image-section {
-  background-image: url("../assets/images/intro-background.svg");
+  background-image: url("images/intro-background.svg");
   padding: 140px 0;
   background-size: cover;
   background-repeat: no-repeat;
@@ -154,13 +154,13 @@ body {
 }
 
 .card-icon.book {
-  background-image: url("../assets/images/book-open.svg");
+  background-image: url("images/book-open.svg");
 }
 .card-icon.notice {
-  background-image: url("../assets/images/notice.svg");
+  background-image: url("images/notice.svg");
 }
 .card-icon.terminal {
-  background-image: url("../assets/images/terminal-window.svg");
+  background-image: url("images/terminal-window.svg");
 }
 .card-content {
   padding: 20px 24px;
@@ -189,7 +189,7 @@ body {
 
   .btn-primary {
     font-size: 0;
-    background-image: url("../assets/images/pencil.svg");
+    background-image: url("images/pencil.svg");
     background-size: 14px;
     background-repeat: no-repeat;
     background-position: center;
@@ -199,7 +199,7 @@ body {
 
   .btn-primary:hover,
   .btn-primary:focus {
-    background-image: url("../assets/images/pencil-white.svg");
+    background-image: url("images/pencil-white.svg");
   }
 
 
