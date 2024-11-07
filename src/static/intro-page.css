@@ -132,6 +132,17 @@ body {
   gap: 24px;
 }
 
+.cards > a {
+  color: var(--color-black);
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+}
+
+.cards > a:hover,
+.cards > a:focus {
+  transform: scale(1.02);
+}
+
 .card {
   background-color: var(--color-white);
   padding-left: 115px;
