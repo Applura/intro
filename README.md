@@ -34,10 +34,11 @@ Source code is bundled into **three critical files**. They are:
 
 ## Deployment
 
-1. Generate an Applura deploy key.
-2. [Add it as a new repository secret](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository)
-   named `APPLURA_DEPLOY_KEY`.
-3. Push or merge a change to the `main` branch.
+1. Generate an Applura deploy key: In your Applura app, under Manage Releases > Deploy keys, Use the "Generate deploy key" button to create your key. Copy it from the screen and keep it safe for the next steps, it is only shown once.
+2. [Add it as a new repository secret](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository): In your Github project (i.e. a fork of the Applura intro project), under Settings > Secrets and Variables > Actions, use the "New Repository Secret" button. It must be named `APPLURA_DEPLOY_KEY`, and its value is the key from step #1.
+3. Push or merge a change to the `main` branch. The Github action provided by Applura in the Intro project will trigger deployment to your Applura app. If you didn't start from a fork of the Applura Intro project, you can add the [Github action found here](https://github.com/Applura/intro/blob/main/.github/workflows/build-and-deploy-to-applura.yml).
+
+Note: [explain how authentication and App identification works, i.e. Github Connect]  
 
 ## Architecture
 
