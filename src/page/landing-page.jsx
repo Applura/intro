@@ -3,6 +3,7 @@ import ProcessedHTML from '../component/processed-html.jsx';
 import Nav from '../component/nav.jsx';
 import Cards from "../component/cards.jsx";
 import Text from "../component/text.jsx";
+import Header from "../component/header.jsx";
 
 /**
  * LandingPage renders "landing_page" resources.
@@ -16,14 +17,7 @@ const LandingPage = ({ fields }) => {
   console.log(fields);
   return (
     <div id="landing-page">
-      <header className="header">
-        <div className="header-content container">
-          <Nav menu={ mainMenu.data } />
-          <div className="actions">
-            <a href="#" className="btn-primary">Edit Page</a>
-          </div>
-        </div>
-      </header>
+      <Header menu={mainMenu}></Header>
       <div className="main-content">
         <div className="banner container">
           <h1 className="title">{ title }</h1>

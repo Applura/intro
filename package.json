@@ -14,6 +14,7 @@
   "author": "Applura, Inc",
   "license": "MIT",
   "dependencies": {
+    "dayjs": "^1.11.13",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
