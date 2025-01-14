@@ -1,4 +1,5 @@
 import React from "react";
+import "./nav.scss";
 
 /**
  * Nav renders a navigation resource.

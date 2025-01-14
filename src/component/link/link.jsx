@@ -1,5 +1,5 @@
 import React from "react";
-import useFollow from "../hook/follow.js";
+import useFollow from "../../hook/follow.js";
 
 /**
  * Link renders and follows links.

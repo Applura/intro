@@ -1,0 +1,13 @@
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 42px;
+  padding-bottom: 42px;
+  animation: 1.5s fadeInUp;
+
+  @media only screen and (max-width: 768px) {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "./link.jsx";
+import "./short-cards.scss";
 
 /**
  * Nav renders a navigation resource.

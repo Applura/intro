@@ -1,0 +1,60 @@
+.short-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .short-card {
+    background-color: var(--color-primary-light);
+    padding: 16px;
+    border-radius: 10px;
+
+    &.active {
+      background-color: var(--color-primary);
+
+      .short-card-icon.book {
+        background-image: url("../../static/images/book-open.svg");
+      }
+      .short-card-icon.notice {
+        background-image: url("../../static/images/notice.svg");
+      }
+      .short-card-icon.terminal {
+        background-image: url("../../static/images/terminal-window.svg");
+      }
+
+      a {
+        color: var(--color-white);
+        font-weight: 700;
+      }
+    }
+
+    a {
+      color: var(--color-black);
+      font-family: var(--font-jost);
+      font-weight: 400;
+      font-size: 16px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .short-card-icon {
+      max-width: 30px;
+      width: 100%;
+      height: 30px;
+      background-size: 27px;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      &.book {
+        background-image: url("../../static/images/book-open-blue.svg");
+      }
+      &.notice {
+        background-image: url("../../static/images/notice-blue.svg");
+      }
+      &.terminal {
+        background-image: url("../../static/images/terminal-window-blue.svg");
+      }
+    }
+  }
+}

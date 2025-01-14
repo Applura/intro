@@ -1,5 +1,6 @@
 import React from "react";
-import Nav from "./nav.jsx";
+import Nav from "./../nav/nav.jsx";
+import "./header.scss";
 
 const Header = ({ menu }) => {
   return <header className="header">
