@@ -3,7 +3,7 @@ import ProcessedHTML from '../../component/processed-html/processed-html.jsx';
 import Cards from "../../component/cards/cards.jsx";
 import Text from "../../component/text/text.jsx";
 import Header from "../../component/header/header.jsx";
-import "./landing-page.scss";
+import "./landing-page.pcss";
 
 /**
  * LandingPage renders "landing_page" resources.

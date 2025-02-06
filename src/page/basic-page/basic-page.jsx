@@ -3,7 +3,7 @@ import ProcessedHTML from "../../component/processed-html/processed-html.jsx";
 import Header from "../../component/header/header.jsx";
 import dayjs from 'dayjs';
 import ShortCards from "../../component/short-cards/short-cards.jsx";
-import "./basic-page.scss";
+import "./basic-page.pcss";
 
 /**
  * BasicPage renders "basic_page" resources.

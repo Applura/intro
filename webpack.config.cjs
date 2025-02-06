@@ -27,11 +27,11 @@ module.exports = {
         },
       },
       {
-        test: /\.scss$/,
+        test: /\.pcss$/,
         use: [
           'style-loader', // Injects styles into DOM
           'css-loader',   // Translates CSS into CommonJS
-          'sass-loader'   // Compiles Sass to CSS
+          'postcss-loader'   // Compiles Sass to CSS
         ]
       }
     ],

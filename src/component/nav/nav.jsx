@@ -1,5 +1,5 @@
 import React from "react";
-import "./nav.scss";
+import "./nav.pcss";
 
 /**
  * Nav renders a navigation resource.

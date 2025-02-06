@@ -1,5 +1,5 @@
 import React from "react";
-import './cards.scss';
+import './cards.pcss';
 
 /**
  * Nav renders a navigation resource.
@@ -7,7 +7,6 @@ import './cards.scss';
  * @param resource
  */
 const Cards = ({ cards }) => {
-  console.log(cards);
   return  <div className="cards">
     {cards.data.map(({ title, teaserIcon, teaserText, links }, i) => (
       <a key={i} href={links.get('canonical').href}>
