@@ -9,7 +9,7 @@ import './cards.pcss';
 const Cards = ({ cards }) => {
   return  <div className="cards">
     {cards.data.map(({ title, teaserIcon, teaserText, links }, i) => (
-      <a key={i} href={links.get('canonical').href}>
+      <a key={i} title={title} href={links.get('canonical').href}>
         <div key={i} className="card">
           <div className={'card-icon ' + teaserIcon}></div>
           <div className="card-content">

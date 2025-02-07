@@ -13,10 +13,10 @@ import "./landing-page.pcss";
  */
 const LandingPage = ({ fields }) => {
   // Extract the required fields from the resource fields.
-  const { title, hero, mainMenu, cards, text } = fields;
+  const { title, hero, mainMenu, cards, text, links } = fields;
   return (
     <div id="landing-page">
-      <Header menu={mainMenu}></Header>
+      <Header menu={mainMenu} links={links}></Header>
       <div className="main-content">
         <div className="banner container">
           <h1 className="title">{ title }</h1>
