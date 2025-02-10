@@ -1,14 +1,18 @@
-.short-cards {
+.short-card-link {
+  color: var(--color-black);
+  font-family: var(--font-jost);
+  font-weight: 400;
+  font-size: 16px;
+  text-decoration: none;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  align-items: center;
+  gap: 10px;
 
-  .short-card {
-    background-color: var(--color-primary-light);
-    padding: 16px;
-    border-radius: 10px;
+  &.active {
+    color: var(--color-white);
+    font-weight: 700;
 
-    &.active {
+    .short-card {
       background-color: var(--color-primary);
 
       .short-card-icon.book {
@@ -20,23 +24,23 @@
       .short-card-icon.terminal {
         background-image: url("../../static/images/terminal-window.svg");
       }
-
-      a {
-        color: var(--color-white);
-        font-weight: 700;
-      }
     }
+  }
+}
 
-    a {
-      color: var(--color-black);
-      font-family: var(--font-jost);
-      font-weight: 400;
-      font-size: 16px;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+.short-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .short-card {
+    background-color: var(--color-primary-light);
+    padding: 16px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
 
     .short-card-icon {
       max-width: 30px;

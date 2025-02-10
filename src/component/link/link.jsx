@@ -8,7 +8,7 @@ import useFollow from "../../hook/follow.js";
  * falls back to regular browser navigation. The Applura client automatically manages browser history and handles
  * external links by initiating a regular browser navigation. It is not necessary to handle those cases here.
  */
-const Link = ({ title, href, className = ''}) => {
+const Link = ({ title, href, className, children}) => {
   const follow = useFollow();
   const handleClick = (e) => {
     if (follow) {
@@ -17,8 +17,8 @@ const Link = ({ title, href, className = ''}) => {
     }
   };
   return (
-    <a title={title} href={href} className={className || undefined} onClick={handleClick}>
-      {title}
+    <a title={title} href={href} className={className} onClick={handleClick}>
+      {children ? children : title}
     </a>
   );
 };

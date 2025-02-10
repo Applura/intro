@@ -1,5 +1,6 @@
 import React from "react";
 import './cards.pcss';
+import Link from "../link/link.jsx";
 
 /**
  * Nav renders a navigation resource.
@@ -9,7 +10,7 @@ import './cards.pcss';
 const Cards = ({ cards }) => {
   return  <div className="cards">
     {cards.data.map(({ title, teaserIcon, teaserText, links }, i) => (
-      <a key={i} title={title} href={links.get('canonical').href}>
+      <Link key={i} title={title} href={links.get('canonical').href} children={
         <div key={i} className="card">
           <div className={'card-icon ' + teaserIcon}></div>
           <div className="card-content">
@@ -17,7 +18,7 @@ const Cards = ({ cards }) => {
             <div className="card-description">{teaserText}</div>
           </div>
         </div>
-      </a>
+      }/>
     ))}
   </div>
 };
