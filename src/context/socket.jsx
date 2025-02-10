@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ClientContext from "../context/client.jsx";
+import ClientContext from "./client.jsx";
 
 /**
  * Updates the HTML document title with the current resource title.

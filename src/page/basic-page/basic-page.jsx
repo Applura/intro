@@ -1,8 +1,9 @@
 import React from "react";
-import ProcessedHTML from "../component/processed-html.jsx";
-import Header from "../component/header.jsx";
+import ProcessedHTML from "../../component/processed-html/processed-html.jsx";
+import Header from "../../component/header/header.jsx";
 import dayjs from 'dayjs';
-import ShortCards from "../component/short-cards.jsx";
+import ShortCards from "../../component/short-cards/short-cards.jsx";
+import "./basic-page.pcss";
 
 /**
  * BasicPage renders "basic_page" resources.
@@ -11,20 +12,19 @@ import ShortCards from "../component/short-cards.jsx";
  *   The basic page fields.
  */
 const BasicPage = ({ fields }) => {
-  console.log(window.location.href);
   // Extract the required fields from the resource fields.
-  const { mainMenu, title, created, relatedLinks, body } = fields;
+  const { mainMenu, title, created, relatedLinks, body, links } = fields;
   return (
     <div id="basic-page">
-      <Header menu={mainMenu}></Header>
+      <Header menu={mainMenu} links={links}></Header>
       <main>
         <section className="basic-page-content">
-          {relatedLinks && relatedLinks.data.length > 0 && (
+          {relatedLinks && relatedLinks.data.length > 0 ? (
             <div className="sidebar">
               <div className="sidebar-title">Dive Deeper</div>
               <ShortCards cards={relatedLinks}></ShortCards>
             </div>
-          )}
+          ) : null}
           <div className="content">
             <div className="page-data">
               <h1 className="page-title">{title}</h1>

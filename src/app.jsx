@@ -1,6 +1,6 @@
 import React from "react";
-import LandingPage from "./page/landing-page.jsx";
-import BasicPage from "./page/basic-page.jsx";
+import LandingPage from "./page/landing-page/landing-page.jsx";
+import BasicPage from "./page/basic-page/basic-page.jsx";
 
 /**
  * PageTypes maps server resource types to the component that should render them.

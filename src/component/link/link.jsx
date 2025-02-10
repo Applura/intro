@@ -1,5 +1,5 @@
 import React from "react";
-import useFollow from "../hook/follow.js";
+import useFollow from "../../hook/follow.js";
 
 /**
  * Link renders and follows links.
@@ -8,7 +8,7 @@ import useFollow from "../hook/follow.js";
  * falls back to regular browser navigation. The Applura client automatically manages browser history and handles
  * external links by initiating a regular browser navigation. It is not necessary to handle those cases here.
  */
-const Link = ({ title, href }) => {
+const Link = ({ title, href, className = ''}) => {
   const follow = useFollow();
   const handleClick = (e) => {
     if (follow) {
@@ -17,7 +17,7 @@ const Link = ({ title, href }) => {
     }
   };
   return (
-    <a title={title} href={href} onClick={handleClick}>
+    <a title={title} href={href} className={className || undefined} onClick={handleClick}>
       {title}
     </a>
   );
