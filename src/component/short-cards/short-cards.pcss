@@ -1,31 +1,30 @@
+:root {
+  --shot-card-bg-color: var(--color-primary-light);
+  --shot-card-color: var(--color-black);
+  --short-card-icon-book: url("../../static/images/book-open-blue.svg");
+  --short-card-icon-notice: url("../../static/images/notice-blue.svg");
+  --short-card-icon-terminal: url("../../static/images/terminal-window-blue.svg");
+  --short-card-font-weight: 400;
+
+  .active {
+    --shot-card-bg-color: var(--color-primary);
+    --shot-card-color: var(--color-white);
+    --short-card-icon-book: url("../../static/images/book-open.svg");
+    --short-card-icon-notice: url("../../static/images/notice.svg");
+    --short-card-icon-terminal: url("../../static/images/terminal-window.svg");
+    --short-card-font-weight: 700;
+  }
+}
+
 .short-card-link {
-  color: var(--color-black);
+  color: var(--shot-card-color);
   font-family: var(--font-jost);
-  font-weight: 400;
+  font-weight: var(--short-card-font-weight);
   font-size: 16px;
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 10px;
-
-  &.active {
-    color: var(--color-white);
-    font-weight: 700;
-
-    .short-card {
-      background-color: var(--color-primary);
-
-      .short-card-icon.book {
-        background-image: url("../../static/images/book-open.svg");
-      }
-      .short-card-icon.notice {
-        background-image: url("../../static/images/notice.svg");
-      }
-      .short-card-icon.terminal {
-        background-image: url("../../static/images/terminal-window.svg");
-      }
-    }
-  }
 }
 
 .short-cards {
@@ -34,7 +33,7 @@
   gap: 20px;
 
   .short-card {
-    background-color: var(--color-primary-light);
+    background-color: var(--shot-card-bg-color);
     padding: 16px;
     border-radius: 10px;
     display: flex;
@@ -51,13 +50,13 @@
       background-repeat: no-repeat;
 
       &.book {
-        background-image: url("../../static/images/book-open-blue.svg");
+        background-image: var(--short-card-icon-book);
       }
       &.notice {
-        background-image: url("../../static/images/notice-blue.svg");
+        background-image: var(--short-card-icon-notice);
       }
       &.terminal {
-        background-image: url("../../static/images/terminal-window-blue.svg");
+        background-image: var(--short-card-icon-terminal);
       }
     }
   }
