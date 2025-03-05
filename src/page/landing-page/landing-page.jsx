@@ -1,8 +1,9 @@
 import React from "react";
-import ProcessedHTML from '../component/processed-html.jsx';
-import Nav from '../component/nav.jsx';
-import Cards from "../component/cards.jsx";
-import Text from "../component/text.jsx";
+import ProcessedHTML from '../../component/processed-html/processed-html.jsx';
+import Cards from "../../component/cards/cards.jsx";
+import Text from "../../component/text/text.jsx";
+import Header from "../../component/header/header.jsx";
+import "./landing-page.pcss";
 
 /**
  * LandingPage renders "landing_page" resources.
@@ -12,18 +13,10 @@ import Text from "../component/text.jsx";
  */
 const LandingPage = ({ fields }) => {
   // Extract the required fields from the resource fields.
-  const { title, hero, mainMenu, cards, text } = fields;
-  console.log(fields);
+  const { title, hero, mainMenu, cards, text, links } = fields;
   return (
     <div id="landing-page">
-      <header className="header">
-        <div className="header-content container">
-          <Nav menu={ mainMenu.data } />
-          <div className="actions">
-            <a href="#" className="btn-primary">Edit Page</a>
-          </div>
-        </div>
-      </header>
+      <Header menu={mainMenu} links={links}></Header>
       <div className="main-content">
         <div className="banner container">
           <h1 className="title">{ title }</h1>

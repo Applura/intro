@@ -1,5 +1,5 @@
 import React from "react";
-import ProcessedHTML from "./processed-html.jsx";
+import ProcessedHTML from "../../component/processed-html/processed-html.jsx";
 
 /**
  * Nav renders a navigation resource.
