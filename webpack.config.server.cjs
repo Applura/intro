@@ -31,6 +31,14 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.pcss$/,
+        use: [
+          'style-loader', // Injects styles into DOM
+          'css-loader',   // Translates CSS into CommonJS
+          'postcss-loader'   // Compiles PostCss to CSS
+        ]
+      }
     ],
   },
   experiments: {
