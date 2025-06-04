@@ -3,7 +3,7 @@ import './problem-pages.pcss';
 
 const ProblemPages = ({status, text}) => {
   return (
-    <div className={"main-content page-" + status }>
+    <div className={"main-content error-pages page-" + status }>
       <div className="content-wrapper">
         <div className="icon"></div>
         <h2 className={'page-title'}>{status}</h2>
