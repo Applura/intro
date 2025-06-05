@@ -21,16 +21,12 @@ const PageTypes = {
  */
 const App = ({ resource, problem }) => {
   if (problem) {
-    let text = 'Something went terribly, terribly wrong.';
     const statusCode = problem.response.status;
-    switch (statusCode) {
-      case 403:
-        text = 'Sign in or get out!';
-        break;
-      case 404:
-        text = "Oops, this is not the page you're looking for.";
-        break;
-    }
+    const phrases = {
+      403: 'Sign in or get out!',
+      404: "Oops, this is not the page you're looking for.",
+    };
+    const text = phrases?.[statusCode] || 'Something went terribly, terribly wrong.';
     return (
       <ProblemPages
         status={statusCode}
