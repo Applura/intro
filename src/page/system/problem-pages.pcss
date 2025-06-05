@@ -1,0 +1,76 @@
+.main-content.error-pages {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    background-image: url("../../static/images/intro-background.svg");
+    padding: 140px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    animation: 2.5s fadeInUp;
+    width: 100%;
+    height: 100%;
+    top: calc(100% - 300px);
+    z-index: -1;
+
+  }
+
+  &.page-403 {
+    .content-wrapper {
+      .icon {
+        mask-image: url("./../../static/images/lock.svg");
+      }
+    }
+  }
+
+  &.page-404 {
+    .content-wrapper {
+      .icon {
+        mask-image: url("./../../static/images/not-found.svg");
+        mask-size: 400px;
+      }
+    }
+  }
+
+  &.page-500 {
+    .content-wrapper {
+      .icon {
+        mask-image: url("./../../static/images/error.svg");
+      }
+    }
+  }
+
+  .content-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    animation: 2s fadeInUp;
+
+    .icon {
+      display: block;
+      width: 400px;
+      height: 240px;
+      background: var(--color-primary);
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      mask-position: center;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 72px;
+    }
+
+    p.text {
+      margin: 0;
+      font-size: 24px;
+    }
+  }
+}

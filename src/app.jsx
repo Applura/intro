@@ -1,6 +1,7 @@
 import React from "react";
 import LandingPage from "./page/landing-page/landing-page.jsx";
 import BasicPage from "./page/basic-page/basic-page.jsx";
+import ProblemPages from "./page/system/problem-pages.jsx";
 
 /**
  * PageTypes maps server resource types to the component that should render them.
@@ -20,7 +21,18 @@ const PageTypes = {
  */
 const App = ({ resource, problem }) => {
   if (problem) {
-    return (<div><h1>Error</h1><p>An unexpected problem occurred.</p></div>);
+    const statusCode = problem.response.status;
+    const phrases = {
+      403: 'Sign in or get out!',
+      404: "Oops, this is not the page you're looking for.",
+    };
+    const text = phrases?.[statusCode] || 'Something went terribly, terribly wrong.';
+    return (
+      <ProblemPages
+        status={statusCode}
+        text={text}
+      />
+    );
   }
   // Extract the type of the current resource.
   const { type } = resource;
