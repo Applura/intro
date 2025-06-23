@@ -1,6 +1,5 @@
 import React from "react";
 import "./short-cards.pcss";
-import Link from "./../link/link.jsx";
 
 /**
  * Nav renders a navigation resource.
@@ -18,12 +17,12 @@ const ShortCards = ({ cards }) => {
         // Check if the resolved link matches the current URL
         const isActive = linkHref === currentUrl;
         return (
-          <Link key={i} className={`short-card-link ${isActive ? 'active' : ''}`} title={title} href={links.get('canonical').href}>
+          <a key={i} className={`short-card-link ${isActive ? 'active' : ''}`} title={title} href={links.get('canonical').href}>
             <div key={i} className={'short-card'}>
               <div className={'short-card-icon ' + teaserIcon}></div>
               <div className="short-card-title">{title}</div>
             </div>
-          </Link>
+          </a>
         );
       })}
     </div>
