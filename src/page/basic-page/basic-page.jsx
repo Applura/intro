@@ -14,6 +14,7 @@ import "./basic-page.pcss";
 const BasicPage = ({ fields }) => {
   // Extract the required fields from the resource fields.
   const { mainMenu, title, created, relatedLinks, body, links } = fields;
+  console.log('fields:', fields);
   return (
     <div id="basic-page">
       <Header menu={mainMenu} links={links}></Header>

@@ -5,7 +5,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "npm run build:client && npm run build:server && npm run build:assets",
+    "build": "npm run build:client && npm run build:server && npm run build:assets && npm run build:render",
+    "build:render": "esbuild src/render.js --loader:.js=jsx --loader:.pcss=empty --bundle --minify --format=esm --outfile=dist/render.js",
     "build:watch": "webpack --watch",
     "build:client": "webpack --config webpack.config.cjs",
     "build:server": "webpack --config webpack.config.server.cjs",
@@ -15,6 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "dayjs": "^1.11.13",
+    "esbuild": "^0.25.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

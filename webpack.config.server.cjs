@@ -9,7 +9,7 @@ const path = require("path");
  */
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: "./src/render.js",
   output: {
     filename: "render.js",

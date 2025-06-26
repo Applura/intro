@@ -1,31 +1,41 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Meta tags can be configured per-resource using a Metadata resource field. Applura will add them server side. -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Define a source for the "@applura/client" in "src/index.js". -->
-    <script type="importmap">
-      {
-        "imports": {
-          "@applura/client": "https://cdn.applura.com/dist/js/client/v2.js"
-        }
+<head>
+  <!-- Meta tags can be configured per-resource using a Metadata resource field. Applura will add them server side. -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Define a source for the "@applura/client" in "src/index.js". -->
+  <script type="importmap">
+    {
+      "imports": {
+        "@applura/client": "https://cdn.applura.com/dist/js/client/v2.js"
       }
-    </script>
-    <!-- Preload the official Applura client module for increased performance. -->
-    <link rel="preload" as="script" href="https://cdn.applura.com/dist/js/client/v2.js" crossorigin/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <!-- Use relative paths for assets. Applura will rewrite the "href" to point to the latest release on its CDN. -->
-    <script type="module" src="/main.js"></script>
-    <link rel="stylesheet" href="/static/mvp.css" />
-    <link rel="stylesheet" href="/static/global.css" />
-    <!-- <title> will be rewritten by the server as needed. -->
-    <title>Starter App</title>
-  </head>
-  <body>
-    <!-- A <div> with the ID "app" is required for Applura server-side rendering. -->
-    <div id="app"></div>
-  </body>
+    }
+  </script>
+<!--  <script type="importmap">-->
+<!--    {-->
+<!--      "imports": {-->
+<!--        "@applura/client": "https://frontend.ddev.site:4001/client/dist/v2.js"-->
+<!--      }-->
+<!--    }-->
+<!--  </script>-->
+  <!-- Preload the official Applura client module for increased performance. -->
+  <link rel="alternate" type="application/vnd.api+json" href="https://00000000-0000-0000-0000-000000000000.api.applura.app.test/">
+  <!--    <link rel="alternate" type="application/vnd.api+json" href="https://00000000-0000-0000-0000-000000000000.api.applura.app.test/explore/manage-content">-->
+<!--  <link rel="preload" as="script" href="https://frontend.ddev.site:4001/client/dist/v2.js" crossorigin/>-->
+  <link rel="preload" as="script" href="https://cdn.applura.com/dist/js/client/v2.js" crossorigin/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <!-- Use relative paths for assets. Applura will rewrite the "href" to point to the latest release on its CDN. -->
+<!--  <script type="module" src="/main.js"></script>-->
+  <link rel="stylesheet" href="/static/mvp.css" />
+  <link rel="stylesheet" href="/static/global.css" />
+  <!-- <title> will be rewritten by the server as needed. -->
+  <title>Starter App</title>
+</head>
+<body>
+<!-- A <div> with the ID "app" is required for Applura server-side rendering. -->
+<div id="app"></div>
+</body>
 </html>
