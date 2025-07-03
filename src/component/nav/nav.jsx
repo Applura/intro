@@ -9,7 +9,7 @@ import "./nav.pcss";
 const Nav = ({ menu }) => {
   return <div className="navigation">
     <ul className="menu">
-      {menu.items.map(({ href, title }, i) => (
+      {menu.map(({ href, title }, i) => (
         <li key={i}><a href={ href }>{ title }</a></li>
       ))}
     </ul>

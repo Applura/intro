@@ -7,7 +7,7 @@ import ProcessedHTML from "../../component/processed-html/processed-html.jsx";
  * @param resource
  */
 const Text = ({ components }) => {
-  const {heading, content} = components.data;
+  const { heading, content } = components;
   return <div className="text-wrapper">
     <h2 className="content-title">{heading}</h2>
     <div className="content-description">

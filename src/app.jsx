@@ -36,10 +36,8 @@ const App = ({ resource, problem }) => {
   }
   // Extract the type of the current resource.
   const { type } = resource;
-  console.log('type:', type);
   // Look up the appropriate component to render this resource.
   const Page = PageTypes[type];
-  console.log('Page:', Page);
   // Render the resource from its fields.
   return (
     (Page && <Page fields={resource} />) || (

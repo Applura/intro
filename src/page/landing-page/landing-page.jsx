@@ -16,7 +16,7 @@ const LandingPage = ({ fields }) => {
   const { title, hero, mainMenu, cards, text, links } = fields;
   return (
     <div id="landing-page">
-      {/*<Header menu={mainMenu} links={links}></Header>*/}
+      <Header menu={mainMenu} links={links}></Header>
       <div className="main-content">
         <div className="banner container">
           <h1 className="title">{ title }</h1>
@@ -26,8 +26,12 @@ const LandingPage = ({ fields }) => {
         </div>
         <div className="background-image-section">
           <div className="container">
-            <Text components={text} />
-            {/*<Cards cards={cards} />*/}
+            {text && text.heading && text.content ? (
+              <Text components={text} />
+            ) : null}
+            {cards ? (
+              <Cards cards={cards} />
+            ) : null}
           </div>
         </div>
       </div>
