@@ -12,17 +12,18 @@ import "./basic-page.pcss";
  *   The basic page fields.
  */
 const BasicPage = ({ fields }) => {
-  // Extract the required fields from the resource fields.
   const { mainMenu, title, created, relatedLinks, body, links } = fields;
+  const relatedLinksArray = relatedLinks ? Object.values(relatedLinks) : [];
+
   return (
     <div id="basic-page">
       <Header menu={mainMenu} links={links}></Header>
       <main>
         <section className="basic-page-content">
-          {relatedLinks && relatedLinks.data.length > 0 ? (
+          {relatedLinksArray.length > 0 ? (
             <div className="sidebar">
               <div className="sidebar-title">Dive Deeper</div>
-              <ShortCards cards={relatedLinks}></ShortCards>
+              <ShortCards cards={relatedLinksArray}></ShortCards>
             </div>
           ) : null}
           <div className="content">
@@ -33,7 +34,6 @@ const BasicPage = ({ fields }) => {
                 <div className="date">{dayjs(created).format('MMM D, YYYY')}</div>
               </div>
             </div>
-            {/* The body content is sent from the server, pre-processed and filtered against XSS vulnerabilities. */}
             <ProcessedHTML html={body} />
           </div>
         </section>
