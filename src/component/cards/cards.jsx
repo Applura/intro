@@ -5,7 +5,7 @@ const Cards = ({ cards }) => {
   return (
     <div className="cards">
       {cards.map(({ title, teaserIcon, teaserText, links }, i) => (
-        // <Link key={i} to={links.get('canonical').href}>
+        <a href={links.canonical.href}>
           <div className="card">
             <div className={`card-icon ${teaserIcon}`}></div>
             <div className="card-content">
@@ -13,7 +13,7 @@ const Cards = ({ cards }) => {
               <div className="card-description">{teaserText}</div>
             </div>
           </div>
-        // </Link>
+        </a>
       ))}
     </div>
   );
