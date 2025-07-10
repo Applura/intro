@@ -1,8 +1,6 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const isDev = process.env.NODE_ENV === "development";
-
 /**
  * This file configures webpack to generate a client-side bundle of your application.
  *
@@ -31,13 +29,13 @@ module.exports = {
       {
         test: /\.pcss$/,
         use: [
-          MiniCssExtractPlugin.loader, // Use style-loader in dev, extract in prod
+          MiniCssExtractPlugin.loader, // Extracts CSS into separate files
           {
             loader: "css-loader",
             options: {
               modules: {
                 auto: true, // Enable CSS modules for .pcss files
-                localIdentName: "[hash:base64:8]", // Readable names in dev, minified in prod
+                localIdentName: "[hash:base64:8]", // Minified class names
               },
             },
           },

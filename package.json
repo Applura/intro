@@ -5,11 +5,10 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "npm run build:client && npm run build:server && npm run build:assets && npm run build:render",
-    "build:render": "esbuild src/render.js --loader:.js=jsx --loader:.pcss=empty --bundle --minify --format=esm --outfile=dist/render.js",
+    "build": "npm run build:client && npm run build:server && npm run build:assets",
     "build:watch": "webpack --watch",
     "build:client": "webpack --config webpack.config.cjs",
-    "build:server": "webpack --config webpack.config.server.cjs",
+    "build:server": "esbuild src/render.js --loader:.js=jsx --loader:.pcss=empty --bundle --minify --format=esm --outfile=dist/render.js",
     "build:assets": "rm -rf dist/static dist/index.html && cp -r src/index.html src/static dist/"
   },
   "author": "Applura, Inc",

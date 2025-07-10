@@ -26,7 +26,7 @@ const LandingPage = ({ fields }) => {
         </div>
         <div className="background-image-section">
           <div className="container">
-            {text && text.heading && text.content ? (
+            {text ? (
               <Text components={text} />
             ) : null}
             {cards ? (
