@@ -21,7 +21,7 @@ const PageTypes = {
  */
 const App = ({ resource, problem }) => {
   if (problem) {
-    const statusCode = problem.response.status;
+    const statusCode = problem.status;
     const phrases = {
       403: 'Sign in or get out!',
       404: "Oops, this is not the page you're looking for.",
