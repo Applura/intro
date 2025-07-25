@@ -14,15 +14,17 @@ import "./basic-page.pcss";
 const BasicPage = ({ fields }) => {
   // Extract the required fields from the resource fields.
   const { mainMenu, title, created, relatedLinks, body, links } = fields;
+  const cards = relatedLinks ? Object.values(relatedLinks) : [];
+
   return (
     <div id="basic-page">
       <Header menu={mainMenu} links={links}></Header>
       <main>
         <section className="basic-page-content">
-          {relatedLinks && relatedLinks.data.length > 0 ? (
+          {cards && cards.length > 0 ? (
             <div className="sidebar">
               <div className="sidebar-title">Dive Deeper</div>
-              <ShortCards cards={relatedLinks}></ShortCards>
+              <ShortCards cards={cards}></ShortCards>
             </div>
           ) : null}
           <div className="content">
