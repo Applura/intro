@@ -35,7 +35,6 @@ const Socket = ({ App, client }) => {
   useEffect(() => {
     (async () => {
       for await (const { resource, problem } of client.start()) {
-
         handleEvent({ resource, problem });
       }
     })();
