@@ -5,11 +5,11 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "npm run build:client && npm run build:server && npm run build:assets",
+    "build": "mkdir -p ${DIST_DIR:-dist} && npm run build:client && npm run build:server && npm run build:assets",
     "build:watch": "webpack --watch",
-    "build:client": "webpack --config webpack.config.cjs",
-    "build:server": "esbuild src/render.js --loader:.js=jsx --loader:.pcss=empty --bundle --minify --format=esm --outfile=dist/render.js",
-    "build:assets": "rm -rf dist/static dist/index.html && cp -r src/index.html src/static dist/"
+    "build:client": "webpack --config webpack.config.cjs --output-path ${DIST_DIR:-dist}",
+    "build:server": "esbuild src/render.js --loader:.js=jsx --loader:.pcss=empty --bundle --minify --format=esm --outfile=${DIST_DIR:-dist}/render.js",
+    "build:assets": "rm -rf ${DIST_DIR:-dist}/static ${DIST_DIR:-dist}/index.html && cp -r src/index.html src/static ${DIST_DIR:-dist}/"
   },
   "author": "Applura, Inc",
   "license": "MIT",
