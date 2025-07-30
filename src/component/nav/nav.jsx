@@ -11,11 +11,13 @@ const Nav = ({ menu }) => {
     <div className="navigation">
       <ul className="menu">
         {menu.data.items.map(({ href, title }, i) => (
-          <li key={i}><a href={ href }>{ title }</a></li>
+          <li key={i}>
+            <a href={href}>{title}</a>
+          </li>
         ))}
       </ul>
     </div>
-  )
+  );
 };
 
 export default Nav;

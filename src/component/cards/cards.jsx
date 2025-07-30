@@ -1,10 +1,10 @@
 import React from "react";
-import './cards.pcss';
+import "./cards.pcss";
 
 const Cards = ({ cards }) => (
   <div className="cards">
     {cards.data.map(({ id, title, teaserIcon, teaserText, links }) => (
-      <a key={id} href={links.get('canonical').href}>
+      <a key={id} href={links.get("canonical").href}>
         <div className="card">
           <div className={`card-icon ${teaserIcon}`}></div>
           <div className="card-content">
@@ -16,6 +16,5 @@ const Cards = ({ cards }) => (
     ))}
   </div>
 );
-
 
 export default Cards;

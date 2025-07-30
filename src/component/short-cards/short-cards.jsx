@@ -7,7 +7,12 @@ import "./short-cards.pcss";
 const ShortCards = ({ cards }) => (
   <div className="short-cards">
     {cards.data.map(({ id, title, teaserIcon, links }) => (
-      <a key={id} className={`short-card-link`} title={title} href={links.get('canonical').href}>
+      <a
+        key={id}
+        className={`short-card-link`}
+        title={title}
+        href={links.get("canonical").href}
+      >
         <div className="short-card">
           <div className={`short-card-icon ${teaserIcon}`}></div>
           <div className="short-card-title">{title}</div>
