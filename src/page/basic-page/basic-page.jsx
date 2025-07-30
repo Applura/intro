@@ -20,7 +20,7 @@ const BasicPage = ({ fields }) => {
       <Header menu={mainMenu} links={links}></Header>
       <main>
         <section className="basic-page-content">
-          {relatedLinks && relatedLinks.data.length > 0 ? (
+          {relatedLinks && relatedLinks.length > 0 ? (
             <div className="sidebar">
               <div className="sidebar-title">Dive Deeper</div>
               <ShortCards cards={relatedLinks}></ShortCards>

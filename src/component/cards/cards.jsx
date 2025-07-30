@@ -3,8 +3,8 @@ import "./cards.pcss";
 
 const Cards = ({ cards }) => (
   <div className="cards">
-    {cards.data.map(({ id, title, teaserIcon, teaserText, links }) => (
-      <a key={id} href={links.get("canonical").href}>
+    {cards.map(({ id, title, teaserIcon, teaserText, links }) => (
+      <a key={id} href={links.canonical.href}>
         <div className="card">
           <div className={`card-icon ${teaserIcon}`}></div>
           <div className="card-content">
